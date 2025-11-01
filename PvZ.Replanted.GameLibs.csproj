@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	<PackageId>PvZ.Replanted.GameLibs</PackageId>
+	<Version>1.2.1</Version>
+	<Authors>PalmForest</Authors>
+	<Description>A library containing the unhollowed GameLibs for the Unity IL2CPP game PvZ: Replanted.</Description>
+	<RepositoryUrl>https://github.com/PalmForest0/PvZ.Replanted.GameLibs</RepositoryUrl>
+	<PackageTags>Replanted;BepInEx</PackageTags>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<Reference Include="lib\*.dll" />
+  </ItemGroup>
+	
+  <ItemGroup>
+	<None Remove="bin\**;obj\**;.vs\**;.git\**;.idea\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<None Include="README.md" Pack="true" PackagePath=""/>
+  </ItemGroup>
+	
+</Project>
