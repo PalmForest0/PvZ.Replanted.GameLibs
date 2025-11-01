@@ -1,26 +1,32 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-	<PackageId>PvZ.Replanted.GameLibs</PackageId>
-	<Version>1.2.1</Version>
-	<Authors>PalmForest</Authors>
-	<Description>A library containing the unhollowed GameLibs for the Unity IL2CPP game PvZ: Replanted.</Description>
-	<RepositoryUrl>https://github.com/PalmForest0/PvZ.Replanted.GameLibs</RepositoryUrl>
-	<PackageTags>Replanted;BepInEx</PackageTags>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<PackageId>PvZ.Replanted.GameLibs</PackageId>
+		<Version>1.2.1.1</Version>
+		<Authors>PalmForest</Authors>
+		<Description>A library containing the unhollowed GameLibs for the Unity IL2CPP game PvZ: Replanted.</Description>
+		<RepositoryUrl>https://github.com/PalmForest0/PvZ.Replanted.GameLibs</RepositoryUrl>
+		<PackageTags>Replanted;BepInEx</PackageTags>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 
-  <ItemGroup>
-	<Reference Include="lib\*.dll" />
-  </ItemGroup>
-	
-  <ItemGroup>
-	<None Remove="bin\**;obj\**;.vs\**;.git\**;.idea\**" />
-  </ItemGroup>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+	</PropertyGroup>
 
-  <ItemGroup>
-	<None Include="README.md" Pack="true" PackagePath=""/>
-  </ItemGroup>
+	<ItemGroup>
+		<Reference Include="build\*.dll" />
+	</ItemGroup>
 	
+	<ItemGroup>
+		<Content Include="build\**\*.dll">
+			<Pack>true</Pack>
+			<PackagePath>lib\net6.0</PackagePath>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="bin\**;obj\**;.vs\**;.git\**;.idea\**" />
+		<None Include="README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
+
 </Project>
