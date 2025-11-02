@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<PackageId>PvZ.Replanted.GameLibs</PackageId>
-		<Version>1.2.1.1</Version>
+		<Version>1.2.1.2</Version>
 		<Authors>PalmForest</Authors>
 		<Description>A library containing the unhollowed GameLibs for the Unity IL2CPP game PvZ: Replanted.</Description>
 		<RepositoryUrl>https://github.com/PalmForest0/PvZ.Replanted.GameLibs</RepositoryUrl>
@@ -14,19 +14,26 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Reference Include="build\*.dll" />
-	</ItemGroup>
-	
-	<ItemGroup>
-		<Content Include="build\**\*.dll">
-			<Pack>true</Pack>
-			<PackagePath>lib\net6.0</PackagePath>
-		</Content>
+		<None Remove="bin\**;obj\**;.vs\**;.git\**;.idea\**" />
+		<None Include="README.md" Pack="true" PackagePath="" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Remove="bin\**;obj\**;.vs\**;.git\**;.idea\**" />
-		<None Include="README.md" Pack="true" PackagePath="" />
+		<_LibDlls Include="lib\net6.0\*.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="@( _LibDlls->'%(Filename)')">
+			<HintPath>%( _LibDlls.FullPath )</HintPath>
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="lib\net6.0\*.dll">
+			<PackagePath>lib\net6.0\</PackagePath>
+			<Pack>true</Pack>
+		</Content>
 	</ItemGroup>
 
 </Project>
