@@ -3,11 +3,11 @@
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<PackageId>PvZ.Replanted.GameLibs</PackageId>
-		<Version>1.2.1.2</Version>
+		<Version>1.3.0</Version>
 		<Authors>PalmForest</Authors>
 		<Description>A library containing the unhollowed GameLibs for the Unity IL2CPP game PvZ: Replanted.</Description>
 		<RepositoryUrl>https://github.com/PalmForest0/PvZ.Replanted.GameLibs</RepositoryUrl>
-		<PackageTags>Replanted;BepInEx</PackageTags>
+		<PackageTags>Replanted;GameLibs</PackageTags>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 
 		<IncludeBuildOutput>false</IncludeBuildOutput>
